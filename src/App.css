@@ -1,5 +1,22 @@
 .App {
   text-align: center;
+  margin: 2em auto;
+  width: 50%;
+  padding: 5px;
+}
+
+.App input{
+  width: 40%;
+  background-color:#9bd9eb;
+  height: 3em;
+  margin: 20px;
+ 
+}
+
+.App button{
+  width: 20%;
+  height: 3em;
+  margin-inline: 20px;
 }
 
 .App-logo {
@@ -35,4 +52,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#hashtagsTable{
+  margin: 0 auto;
+}
+
+#hashtagsTable tr td, #hashtagsTable tr th {
+  border: 1px solid black;
+  width: 15%;
+  text-align: center;
+  padding: 3px;
 }
