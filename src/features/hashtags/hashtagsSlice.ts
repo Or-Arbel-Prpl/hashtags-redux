@@ -60,8 +60,7 @@ export const hashtagsSlice = createSlice({
       })
       .addCase(addHashtag.fulfilled, (state, action) => {     
         let newHashtag = action.payload.hashtag;
-        console.log(newHashtag);
-             
+        console.log(newHashtag); 
         state.hashtags = [...state.hashtags, {id: newHashtag._id, name: newHashtag.name, slag: newHashtag.slag, postsCount: newHashtag.postsCount || 0}];
         fetchHashtags();
       })
