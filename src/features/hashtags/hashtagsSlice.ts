@@ -20,7 +20,6 @@ const initialState: HashtagsListState = {
 
 export const fetchHashtags = createAsyncThunk('hashtags/fetchHashtags', async () => {
     const response = await fetch('https://newsrael-mern.herokuapp.com/api/hashtags')
-    // console.log(response.hashtags);
     return response.json();
   })
 
@@ -33,7 +32,6 @@ export const addHashtag = createAsyncThunk('hashtags/addHashtag', async (val) =>
     })
     .then(res => res.json());
     
-    console.log(newHashtag);
     return newHashtag;
   })
 
@@ -60,8 +58,6 @@ export const hashtagsSlice = createSlice({
       })
       .addCase(addHashtag.fulfilled, (state, action) => {     
         let newHashtag = action.payload.hashtag;
-        console.log(newHashtag);
-             
         state.hashtags = [...state.hashtags, {id: newHashtag._id, name: newHashtag.name, slag: newHashtag.slag, postsCount: newHashtag.postsCount || 0}];
         fetchHashtags();
       })
@@ -72,8 +68,6 @@ export const hashtagsSlice = createSlice({
 })
 
 
-
-// export const { addHashtag } = hashtagsSlice.actions;
 
 export const selectHashtags = (state: RootState) => state.hashtags;
 
