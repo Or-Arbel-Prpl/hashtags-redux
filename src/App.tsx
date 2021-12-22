@@ -9,9 +9,7 @@ import { Heading, PageActions, Page, TextField, Button } from '@shopify/polaris'
 
 
 function App() {
-  const newHashtag = useSelector(selectHashtag);
-  console.log(newHashtag);
-  
+  const newHashtag = useSelector(selectHashtag);  
   const dispatch = useDispatch();
 
   const submitHandler = () => {
@@ -22,9 +20,8 @@ function App() {
   return (
     <React.Fragment>
       <Page
-  title="Hashtags management"
-  divider
->
+        title="Hashtags management"
+      >
       <PageActions
         primaryAction={{
           content: 'Load Hashtags',
@@ -41,16 +38,6 @@ function App() {
       
       connectedRight={<Button onClick={() => submitHandler()}>Submit</Button>}
     />
-    {/* <div className="App">
-      <input type='text' 
-        name='hashtag' 
-        placeholder='Insert new hashtag...' 
-        onChange={(e) => dispatch(changeHashtag(e.target.value))} 
-        value = {newHashtag.name} 
-      />
-      <button onClick={() => dispatch(addHashtag(newHashtag.name))}>Add Hashtag</button>
-      <button onClick={() => dispatch(fetchHashtags(newHashtag.name))}>Load Hashtags</button>
-    </div> */}
 
     <Table/>
     </Page>

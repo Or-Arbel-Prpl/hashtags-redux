@@ -13,8 +13,7 @@ ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
       <AppProvider i18n={enTranslations}>
-      <App />
-        {/* <Button onClick={() => alert('Button clicked!')}>Example button</Button> */}
+        <App />
       </AppProvider>
     </React.StrictMode>
   </Provider>,
